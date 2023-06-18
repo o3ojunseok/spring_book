@@ -2,6 +2,10 @@ package com.junseok.springbootdevelop.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 
 @Entity // 엔티티로 지정
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // 기본 생성자 추가
@@ -18,6 +22,14 @@ public class Article {
 
     @Column(name = "content", nullable = false)
     private String content;
+
+    @CreatedDate
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
     @Builder // 빌더 패턴으로 객체 생성
     // 어느 필드에 어떤 값이 들어가는지 명시적으로 파악이 가능하다.
