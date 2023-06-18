@@ -1,7 +1,9 @@
 package com.junseok.springbootdevelop.dto;
 
 import com.junseok.springbootdevelop.domain.Article;
+import lombok.Getter;
 
+@Getter
 public class ArticleListViewResponse {
 
     private final Long id;
